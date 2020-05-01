@@ -18,7 +18,8 @@ services:
 
 
   liquidsoap:
-    image: labizbille/liquidsoap:1.0
+    build: ./liquidsoap
+    image: labizbille/liquidsoap:1.3
     restart: unless-stopped
     volumes:
       - ./config/:/config
@@ -27,6 +28,8 @@ services:
       - HARBOR_PASSWORD=aaa
       - ICECAST_SOURCE_PASSWORD=aaa
       - ICECAST_PORT_8000_TCP_ADDR=icecast
-      - ICECAST_PORT_8000_TCP_PORT=8000      
+      - ICECAST_PORT_8000_TCP_PORT=8000   
+      - ENV_GOOGLE_APIKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   
+      - GOOGLE_CALID=j1oktpsi4vjnt5tq5h5t3kf2ag@group.calendar.google.com
     ports:
     - 5001:5001

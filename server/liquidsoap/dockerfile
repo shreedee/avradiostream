@@ -3,8 +3,18 @@ FROM debian:stable-slim
 RUN apt-get -q update && \
     apt-get -q -y install gnupg && \
     echo deb http://deb.liquidsoap.info/debian stable main >> /etc/apt/sources.list.d/liquidsoap.list && \
-    apt-get -q -y install liquidsoap supervisor festival sox curl jq && \
+    curl -sL https://deb.nodesource.com/setup_11.x |  bash - && \
+    apt-get -q -y install liquidsoap supervisor festival sox nodejs npm && \
+    npm install -g typescript ts-node-dev && \
     apt-get clean
+
+EXPOSE 9222    
+
+COPY ./scripts/ /scripts/
+WORKDIR /scripts
+
+RUN npm install 
+
 
 RUN touch /run.sh && chmod 777 /run.sh
 COPY ./supervisor.sh /
