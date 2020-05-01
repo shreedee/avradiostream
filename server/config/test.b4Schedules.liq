@@ -27,7 +27,6 @@ output_docker_env.icecast = scc_out(
     port=8000,
     password="aaa"
 )
-
 #output_balrog.icecast = scc_out(host="212.83.158.125", port=8000, password=icecast_password)
 #output_hobbit.icecast = scc_out(host="212.129.20.90", port=8000, password=icecast_password)
 
@@ -53,23 +52,10 @@ classical_morning = playlist(mode='randomize',reload=60,reload_mode="watch","/da
 tracks = switch([ ({5h-13h}, day), ({13h-17h}, jazz_evening), ({17h-23h}, night), ({23h-3h}, morning), ({3h-6h}, classical_morning) ])
 airplay = rotate(weights=[1,3],[jingles,tracks])
 
-def googleCal_request_function() 
-  result = get_process_lines("bash /config/getschedule.sh")
-  log("next song from googleCal: #{result}")
-  request.create(list.hd(default="",result))
-end
-
-cal_playlist = request.dynamic(googleCal_request_function)
-output.dummy(fallible=true,cal_playlist)
-
-airplay = fallback(track_sensitive=false,[cal_playlist,airplay])
-
-#normalizing and processing
 airplay = amplify(1.,override="replay_gain",airplay)
 
+#harbor_input = input.harbor("radiodj", port=5001, password="aaa")
 harbor_input = input.harbor("radiodj", port=5001, user="avradio",password="aaa")
-
-#final play
 input = fallback(track_sensitive=false,[harbor_input,airplay,emergency])
 
 
