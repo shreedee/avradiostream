@@ -6,17 +6,17 @@
   "scripts": {
     "check": "node ./dist/test.js",
     "prod": "node ",
-    "debug": "ts-node-dev --inspect-brk=0.0.0.0:9222 ",
-    "startandwait": "tail -f /dev/null"
+    "debug": "ts-node-dev --inspect-brk=0.0.0.0:9222 "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "elasticsearch": "^16.7.1",
+    "cheerio": "^1.0.0-rc.3",
+    "download-file": "^0.1.5",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "tunnel-ssh": "^4.1.4"
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.150",

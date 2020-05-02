@@ -41,18 +41,6 @@ end
 emergency = single("/config/fail.mp3")
 
 # MIXS
-jingles = playlist(mode='randomize',reload=60,reload_mode="watch","/data/streaming/random_play/jingles")
-
-day = playlist(mode='randomize',reload=60,reload_mode="watch","/data/streaming/random_play/daylist")
-morning = playlist(mode='randomize',reload=60,reload_mode="watch","/data/streaming/random_play/morning")
-night = playlist(mode='randomize',reload=60,reload_mode="watch","/data/streaming/random_play/latenight")
-jazz_evening = playlist(mode='randomize',reload=60,reload_mode="watch","/data/streaming/random_play/jazz_evening")
-classical_morning = playlist(mode='randomize',reload=60,reload_mode="watch","/data/streaming/random_play/classical_morning")
-
-#times in UTC
-tracks = switch([ ({5h-13h}, day), ({13h-17h}, jazz_evening), ({17h-23h}, night), ({23h-3h}, morning), ({3h-6h}, classical_morning) ])
-airplay = rotate(weights=[1,3],[jingles,tracks])
-
 def googleCal_request_function() 
   result = get_process_lines("npm run prod -- ./dist/runSchedule.js")
   log("1.1 all logs: #{result}")
@@ -64,9 +52,6 @@ end
 cal_playlist = request.dynamic(googleCal_request_function)
 output.dummy(fallible=true,cal_playlist)
 
-airplay = fallback(track_sensitive=false,[cal_playlist,airplay])
-
-#test witj just dynamic
 airplay = fallback(track_sensitive=false,[cal_playlist,emergency])
 
 #normalizing and processing
