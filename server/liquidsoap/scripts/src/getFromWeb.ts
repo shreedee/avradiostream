@@ -5,7 +5,7 @@ To DEBUG
 npm run debug -- ./src/getFromWeb.ts 2020-05-01T09:35:00.000Z
 
 for prod 
-npm run prod -- ./dist/getFromWeb.js 2020-05-01T09:35:00.000Z
+npm run prod -- ./dist/getFromWeb.js 
 
 */
 import * as fs from 'fs';

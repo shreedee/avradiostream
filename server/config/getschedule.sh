@@ -1,13 +1,12 @@
 #!/bin/bash
 
 #the only output is the file name All other "logs" should be to std err
-
-echo "using apiKey -> $ENV_GOOGLE_APIKEY" 1>&2
+#echo "using apiKey -> $ENV_GOOGLE_APIKEY" 1>&2
 
 minDate=$( date +%Y-%m-%dT%TZ )
-echo $currentDate
 
-minDate=2020-05-01T20:40:14Z
+#minDate=2020-05-01T20:40:14Z
+
 maxDate=$(date -d "$minDate +5 min" +%Y-%m-%dT%TZ)
 
 echo "minDate : $minDate, maxDate: $maxDate" 1>&2
