@@ -24,6 +24,7 @@ const TIMEFORMAT= 'YYYY-MM-DDTHH:mm:ss';
 
 //we need to optimize hits on google cal elese they will block us
 async function main(){
+    debugger;
     let schedules =fs.existsSync(myConfig.calFileName)?
         loadStatusFile(myConfig.calFileName):[];
     
@@ -70,7 +71,7 @@ async function main(){
         
     });
 
-    
+    schedules = _.orderBy(schedules,s=>s.startTime);
 
     fs.writeFileSync(myConfig.calFileName, JSON.stringify(schedules,null,'\t'));
 
@@ -208,15 +209,26 @@ async function readCalAsync(readTime:moment.Moment){
         }[]
     } = await res.json();
 
-    const schedules:ProgramProps[] = _.map(data.items,item=>({
-            id:item.id,
-            summary:item.summary,
-            location:item.location,
-            startTime:moment.utc(item.start.dateTime),
-            endTime:moment.utc(item.end.dateTime)
-    }));
+    const schedules:ProgramProps[] = _.map(data.items,item=>{
+        
+        try{
+            return {
+                id:item.id,
+                summary:item.summary,
+                location:item.location,
+                startTime:moment.utc(item.start.dateTime),
+                endTime:moment.utc(item.end.dateTime)
+            };
+        }
+        catch(err){
+            console.error(`failed to read one calendar item :${JSON.stringify(item)}`);
+            return undefined;
+        }
+        
+        
+    });
     
-    return schedules;
+    return _.orderBy(_.filter(schedules, s=>!!s && !!s.media), s=>s.startTime);
 }
 
 

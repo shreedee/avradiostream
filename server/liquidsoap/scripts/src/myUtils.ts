@@ -32,7 +32,7 @@ export function loadStatusFile(fileName:string){
         p.startTime=moment.utc(p.startTime);
     });
 
-    return schedules;
+    return _.orderBy(schedules, s=>s.startTime);
 }
 
 
