@@ -61,16 +61,14 @@ async function main() {
     debugger;
 
 
-
-    const liquidIP = await lookup('liquidsoap');
-    if (!liquidIP)
-        throw 'copuld not resolved liquidsoap IP';
-
-    const schedules = _.orderBy(loadStatusFile(myConfig.calFileName), s => s.startTime);
-
     //so that we can test with arbit dates
     //example node googleProgram.ts 2020-05-01T20:40:14Z
     while (true) {
+        const liquidIP = await lookup('liquidsoap');
+        if (!liquidIP)
+            throw 'copuld not resolved liquidsoap IP';
+
+        const schedules = _.orderBy(loadStatusFile(myConfig.calFileName), s => s.startTime);
 
         const timeNow = process.argv.length > 2 ?
             moment.utc(process.argv[2]) : moment.utc();

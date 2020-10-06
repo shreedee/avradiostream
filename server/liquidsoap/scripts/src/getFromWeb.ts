@@ -228,7 +228,7 @@ async function readCalAsync(readTime:moment.Moment){
         
     });
     
-    return _.orderBy(_.filter(schedules, s=>!!s && !!s.media), s=>s.startTime);
+    return _.orderBy(_.filter(schedules, s=>!!s ), s=>s.startTime);
 }
 
 
