@@ -1,0 +1,271 @@
+@import "./mycolors.scss";
+
+.homeContent {
+    background-color: $homebgcolor;
+    color: $hometextcolor;
+
+    .home-header {
+        background-color: $headerbg;
+        padding: 5px;
+        display: $display;
+
+        .logo-header {
+            .logoImg {
+                width: 140px;
+                height: 35px;
+                background-image: url("./assets/radio.png");
+                background-size: contain;
+                margin-right: 80px;
+            }
+        }
+
+        .nav-header {
+            a {
+                color: $hometextcolor;
+                padding: 10px 30px;
+                font-weight: 500;
+            }
+        }
+
+        .search-header {
+            width: 35px;
+            height: 35px;
+            background-image: url("./assets/search.jpg");
+            background-size: cover;
+        }
+
+        .login-header {
+            width: 60px;
+            height: 35px;
+            background-image: url("./assets/login.jpg");
+            background-size: contain;
+            margin-left: 120px;
+        }
+    }
+
+    .container {
+        padding: 0;
+
+        .subcontent {
+            position: relative;
+
+            .content-img1 {
+                width: 1110px;
+                height: 401px;
+                filter: blur(8px);
+            }
+            .content-img2 {
+                width: 500px;
+                height: 401px;
+                position: absolute;
+                left: 60px;
+                opacity: 1;
+            }
+
+            .content-text-left {
+                position: absolute;
+                bottom: $fontsize;
+                left: 100px;
+                line-height: $lineheight;
+            }
+
+            .content-text-right {
+                position: absolute;
+                bottom: $fontsize;
+                right: $left;
+                line-height: $lineheight;
+                text-align: right;
+            }
+
+            .content-subtext1 {
+                font-size: 40px;
+            }
+            .content-subtext2 {
+                font-size: 25px;
+                font-weight: 700;
+            }
+        }
+
+        .subsection {
+            .text {
+                font-size: 18px;
+                text-align: center;
+                margin-top: $margin-top;
+            }
+
+            .grid {
+                display: $display;
+                margin-left: 80px;
+
+                .radius {
+                    border-radius: 10%;
+                    padding: $padding;
+                }
+                .concertimg {
+                    width: 90%;
+                    height: 480px;
+                }
+                .subgrid {
+                    flex-wrap: wrap;
+                }
+                .subgrid1 {
+                    width: 155px;
+                }
+            }
+
+            .play {
+                width: $width;
+                height: $width;
+                margin-top: 60px;
+                margin-right: $padding;
+            }
+            .margin {
+                margin-top: 170px;
+            }
+
+            .grid1 {
+                display: flex;
+                margin-left: 80px;
+
+                .img1 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/savitri.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+                .img2 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/christmas.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+                .img3 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/bullet.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+                .img4 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/nutritional.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+                .img5 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/cyclone.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+                .img6 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/offering.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+                .img7 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/aarohan.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+                .img8 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/happiness.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+                .img9 {
+                    width: 300px;
+                    height: 215px;
+                    background-image: url("./assets/offering.jpg");
+                    background-size: contain;
+                    border-radius: 10%;
+                    margin: 10px;
+                }
+            }
+            .discover {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                padding: 30px 0px;
+                color: black;
+                font-size: 25px;
+                font-weight: 600;
+                text-align: center;
+
+                p {
+                    padding: 25px 0px;
+                }
+                .sub {
+                    border: 1px solid gray;
+                    width: 180px;
+                    height: 100px;
+                    border-radius: 15%;
+                }
+
+                .nature {
+                    background-color: #18e1bf;
+                }
+                .culture {
+                    background-color: #f3faac;
+                }
+                .music {
+                    background-color: #5f7079;
+                }
+            }
+        }
+
+        hr {
+            background-color: $hr;
+            height: 1px;
+            width: 85%;
+        }
+
+        .footer {
+            margin-left: $width;
+            margin-top: $margin-top;
+            display: $display;
+
+            .footer-left {
+                border-left: 2px solid $hometextcolor;
+
+                p {
+                    padding-left: $fontsize;
+                    font-size: 20px;
+                    line-height: $lineheight;
+                }
+            }
+            .footer-right {
+                margin-left: 550px;
+
+                p {
+                    
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .footer-end {
+            margin-top: $margin;
+            width: 100%;
+        }
+    }
+}
