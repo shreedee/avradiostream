@@ -14,4 +14,4 @@ deploy this in it's own namespace
 
 create ingress for this as well
 
-use dummy wp host name testradio.harmony.local
+use dummy wp host name avradio-beta.harmony.newearthart.tech
