@@ -57,7 +57,7 @@
         <div class='subsection'>
             <p class='text'>
                 <strong> MOST RECENT PODCASTS:</strong> Stay up to date on the latest news, music, art and culture in
-                Auroville.
+                Auroville
             </p>
 
 
@@ -81,23 +81,18 @@
                         src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/tirumular.jpg'
                         alt='Media'></img>
                     <img class='radius subgrid1'
-                        src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/edible.jpg'
+                        src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/audible.jpg'
                         alt='Media'></img>
                     <img class='radius subgrid1'
                         src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/tirumular.jpg'
                         alt='Media'></img>
                     <img class='radius subgrid1'
-                        src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/edible.jpg'
+                        src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/audible.jpg'
                         alt='Media'></img>
                 </div>
-                <img class='play' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/play.png'
-                    alt='Media'></img>
+                <div class="play padding"></div>
 
             </div>
-
-
-
-
 
         </div>
 
@@ -106,17 +101,13 @@
         <div class='subsection'>
             <p class='text'>
                 <strong>MOST FOLLOWED PROGRAMS:</strong> Top featured programs in various genres that are popular with
-                our listeners.
+                our listeners
             </p>
-            <div class='grid'>
-                <img class='radius' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/savitri.jpg'
-                    alt='Media'></img>
-                <img class='radius' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/edible.jpg'
-                    alt='Media'></img>
-                <img class='radius' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/tirumular.jpg'
-                    alt='Media'></img>
-                <img class='play' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/play.png'
-                    alt='Media'></img>
+            <div class='grid1'>
+                <div class="img1 live"></div>
+                <div class="img2 live"></div>
+                <div class="img3 live"></div>
+                <div class="play"></div>
             </div>
 
         </div>
@@ -127,14 +118,13 @@
             <p class='text'>
                 <strong>LIVE CONCERT RECORDINGS:</strong> Live concerts that have taken place in Auroville and have been
                 recorded/broadcast
-                our listeners.
+                our listeners
             </p>
             <div class='grid1'>
-                <div class="img1"></div>
-                <div class="img2"></div>
-                <div class="img3"></div>
-                <img class='play' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/play.png'
-                    alt='Media'></img>
+                <div class="img4 live"></div>
+                <div class="img5 live"></div>
+                <div class="img6 live"></div>
+                <div class="play"></div>
             </div>
 
         </div>
@@ -147,11 +137,10 @@
                 our listeners.
             </p>
             <div class='grid1'>
-                <div class="img4"></div>
-                <div class="img5"></div>
-                <div class="img6"></div>
-                <img class='play' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/play.png'
-                    alt='Media'></img>
+                <div class="img7 live"></div>
+                <div class="img8 live"></div>
+                <div class="img9 live"></div>
+                <div class="play"></div>
             </div>
 
         </div>
@@ -163,11 +152,10 @@
                 <strong>ALL ARTISTS:</strong> Artists from around Auroville who produce podcasts
             </p>
             <div class='grid1'>
-                <div class="img7"></div>
-                <div class="img8"></div>
-                <div class="img9"></div>
-                <img class='play' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/play.png'
-                    alt='Media'></img>
+                <div class="img10 live"></div>
+                <div class="img11 live"></div>
+                <div class="img12 live"></div>
+                <div class="play"></div>
             </div>
 
         </div>
@@ -176,23 +164,17 @@
 
         <div class='subsection'>
             <p class='text'>
-                <strong>VIDEOS:</strong> Popular videos from our archives.
+                <strong>VIDEOS:</strong> Popular videos from our archives
             </p>
 
-            <div class='grid'>
-                <img class='radius concertimg'
-                    src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/concert.jpg' alt='Media'></img>
+            <div class='grid1'>
+                <div class="img13"></div>
                 <div>
-                    <img class='radius' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/music.jpg'
-                        alt='Media'></img>
-                    <img class='radius'
-                        src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/interview.jpg'
-                        alt='Media'></img>
+                    <div class="img14 live"></div>
+                    <div class="img15 live"></div>
                 </div>
 
-                <img class='play margin' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/play.png'
-                    alt='Media'></img>
-
+                <div class="play margin"></div>
             </div>
         </div>
 
@@ -200,7 +182,7 @@
 
         <div class='subsection'>
             <p class='text'>
-                <strong>DISCOVER:</strong> Discover podcasts and music according to genre.
+                <strong>DISCOVER:</strong> Discover podcasts and music according to genre
             </p>
             <div class='discover'>
                 <div class='nature sub'>
@@ -225,34 +207,35 @@
                 </div>
 
             </div>
+        </div>
 
-            <hr>
+        <hr>
 
-            <div class='footer'>
-                <div class='footer-left'>
-                    <p>INFO
-                    <p>
-                    <P>WHO WE ARE</P>
-                    <P>OUR PARTNERS</P>
-                </div>
-                <div class='footer-right'>
-                    <p>SOCIAL MEDIA</p>
-                    <p><img src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/social-icons.png'
-                            alt='Media'></img></p>
-                </div>
+        <div class='footer'>
+            <div class='footer-left'>
+                <p>INFO
+                <p>
+                <P>WHO WE ARE</P>
+                <P>OUR PARTNERS</P>
             </div>
-
-            <div>
-                <img class='footer-end' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/banner.png'
+            <div class='footer-right'>
+                <p>SOCIAL MEDIA</p>
+                <img src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/social-icons.png'
                     alt='Media'></img>
             </div>
+        </div>
 
+        <div>
+            <img class='footer-end' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/banner.png'
+                alt='Media'></img>
         </div>
 
     </div>
 
+</div>
 
 
-    <!--<div id="react_root"></div>
+
+<!--<div id="react_root"></div>
 
 	

@@ -1,2 +1,4 @@
 /radioSite/src/site.scss.d.ts
 /radioSite/src/homepage.scss.d.ts
+/radioSite/node_modules
+/radioSite/wpTheme/dist

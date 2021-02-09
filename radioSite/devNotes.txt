@@ -1,0 +1,12 @@
+todo: WRite here all the steps needed to create the dev environment to run this project
+
+Please refer the link : https://medium.com/@deepayan_63213/developing-a-debug-able-re-usable-maintainable-wordpress-theme-from-scratch-using-bootstrap-c24d5471ea4c
+
+To Compile:
+1. Change directory to the project folder 
+C:\> cd c:\codework\avRadio\radioSite
+2. Build using webpack
+node node_modules/webpack/bin/webpack.js
+3.From the command prompt start the wordpress service stack
+docker-compose up
+4.Browse to http://localhost:8081/

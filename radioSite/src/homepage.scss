@@ -20,6 +20,7 @@
         }
 
         .nav-header {
+            padding-top: 10px;
             a {
                 color: $hometextcolor;
                 padding: 10px 30px;
@@ -39,7 +40,7 @@
             height: 35px;
             background-image: url("./assets/login.jpg");
             background-size: contain;
-            margin-left: 120px;
+            margin-left: 100px;
         }
     }
 
@@ -51,12 +52,12 @@
 
             .content-img1 {
                 width: 1110px;
-                height: 401px;
+                height: 400px;
                 filter: blur(8px);
             }
             .content-img2 {
                 width: 500px;
-                height: 401px;
+                height: 400px;
                 position: absolute;
                 left: 60px;
                 opacity: 1;
@@ -101,10 +102,7 @@
                     border-radius: 10%;
                     padding: $padding;
                 }
-                .concertimg {
-                    width: 90%;
-                    height: 480px;
-                }
+
                 .subgrid {
                     flex-wrap: wrap;
                 }
@@ -114,90 +112,81 @@
             }
 
             .play {
-                width: $width;
-                height: $width;
+                background-image: url("./assets/play.jpg");
+                width: 60px;
+                height: 100px;
                 margin-top: 60px;
-                margin-right: $padding;
             }
+
+            .padding {
+                padding-right: 70px;
+            }
+
             .margin {
                 margin-top: 170px;
+                margin-right: 13px;
             }
 
             .grid1 {
                 display: flex;
                 margin-left: 80px;
 
-                .img1 {
+                .live {
                     width: 300px;
                     height: 215px;
-                    background-image: url("./assets/savitri.jpg");
-                    background-size: contain;
+                    background-size: cover;
                     border-radius: 10%;
                     margin: 10px;
+                }
+                .img1 {
+                    background-image: url("./assets/savitri.jpg");
                 }
                 .img2 {
-                    width: 300px;
-                    height: 215px;
-                    background-image: url("./assets/christmas.jpg");
-                    background-size: contain;
-                    border-radius: 10%;
-                    margin: 10px;
+                    background-image: url("./assets/audible.jpg");
                 }
                 .img3 {
-                    width: 300px;
-                    height: 215px;
-                    background-image: url("./assets/bullet.jpg");
-                    background-size: contain;
-                    border-radius: 10%;
-                    margin: 10px;
+                    background-image: url("./assets/tirumular.jpg");
                 }
                 .img4 {
-                    width: 300px;
-                    height: 215px;
-                    background-image: url("./assets/nutritional.jpg");
-                    background-size: contain;
-                    border-radius: 10%;
-                    margin: 10px;
+                    background-image: url("./assets/offering.jpg");
                 }
                 .img5 {
-                    width: 300px;
-                    height: 215px;
-                    background-image: url("./assets/cyclone.jpg");
-                    background-size: contain;
-                    border-radius: 10%;
-                    margin: 10px;
+                    background-image: url("./assets/christmas.jpg");
                 }
                 .img6 {
-                    width: 300px;
-                    height: 215px;
-                    background-image: url("./assets/offering.jpg");
-                    background-size: contain;
-                    border-radius: 10%;
-                    margin: 10px;
+                    background-image: url("./assets/bullet.jpg");
                 }
                 .img7 {
-                    width: 300px;
-                    height: 215px;
-                    background-image: url("./assets/aarohan.jpg");
-                    background-size: contain;
-                    border-radius: 10%;
-                    margin: 10px;
+                    background-image: url("./assets/nutritional.jpg");
                 }
                 .img8 {
-                    width: 300px;
-                    height: 215px;
+                    background-image: url("./assets/cyclone.jpg");
+                }
+                .img9 {
+                    background-image: url("./assets/savitri.jpg");
+                }
+                .img10 {
+                    background-image: url("./assets/aarohan.jpg");
+                }
+                .img11 {
                     background-image: url("./assets/happiness.jpg");
-                    background-size: contain;
+                }
+                .img12 {
+                    background-image: url("./assets/offering.jpg");
+                }
+                .img13 {
+                    background-image: url("./assets/concert.jpg");
+                    width: 650px;
+                    height: 450px;
+                    background-size: cover;
                     border-radius: 10%;
                     margin: 10px;
                 }
-                .img9 {
-                    width: 300px;
-                    height: 215px;
-                    background-image: url("./assets/offering.jpg");
-                    background-size: contain;
-                    border-radius: 10%;
-                    margin: 10px;
+                .img14 {
+                    background-image: url("./assets/interview.jpg");
+                }
+                .img15 {
+                    background-image: url("./assets/music.jpg");
                 }
             }
             .discover {
@@ -212,7 +201,7 @@
                 text-align: center;
 
                 p {
-                    padding: 25px 0px;
+                    padding: 30px 0px;
                 }
                 .sub {
                     border: 1px solid gray;
@@ -243,23 +232,16 @@
             margin-left: $width;
             margin-top: $margin-top;
             display: $display;
+            justify-content: space-between;
 
             .footer-left {
                 border-left: 2px solid $hometextcolor;
-
-                p {
-                    padding-left: $fontsize;
-                    font-size: 20px;
-                    line-height: $lineheight;
-                }
             }
-            .footer-right {
-                margin-left: 550px;
 
-                p {
-                    
-                    font-size: 20px;
-                }
+            p {
+                padding-left: $fontsize;
+                font-size: 20px;
+                line-height: $lineheight;
             }
         }
 

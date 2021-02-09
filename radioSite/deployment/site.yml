@@ -1,0 +1,170 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: avradio-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+
+  rules:
+  - host: avradio-beta.harmony.newearthart.tech
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: wordpress 
+          servicePort: 80                    
+    
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: wordpress
+    tier: frontend
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-uploads-pv-claim
+  labels:
+    app: wordpress
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Mi
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+    name: mysql
+    labels:
+        app: mysql
+spec:
+    clusterIP: None
+    selector:
+        app: mysql
+
+---
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+    name: mysql-node
+spec:
+  serviceName: mysql
+  selector:
+    matchLabels:
+        app: mysql
+  replicas: 1
+  
+  
+  template:
+    metadata:
+        labels:
+            app: mysql
+    spec:
+        containers:
+        -   name: mysql
+            image: mysql:5.6
+
+            volumeMounts:
+            -   mountPath: /var/lib/mysql
+                name: sql-data
+    
+            env:
+            -   name: MYSQL_ROOT_PASSWORD
+                value: "wordpress"
+
+            -   name: MYSQL_DATABASE
+                value: "wordpress"
+
+            -   name: MYSQL_USER
+                value: "wordpress"
+
+            -   name: MYSQL_PASSWORD
+                value: "wordpress"
+
+  volumeClaimTemplates:
+  - metadata:
+        name: sql-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Gi
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  selector:
+    matchLabels:
+        app: wordpress
+        tier: frontend
+
+  strategy:
+    type: Recreate
+  
+  template:
+    metadata:
+        labels:
+            app: wordpress
+            tier: frontend
+    spec:
+        containers:
+        -   image: cloudconnect.scanrev.com:5000/av_radio_wp:1.1
+            name: wordpress
+            ports:
+            - containerPort: 80
+            volumeMounts:
+            - name: wordpress-uploads
+              mountPath: /var/www/html/wp-content/uploads
+            env:
+                -   name: WORDPRESS_DB_USER
+                    value: "wordpress"
+                -   name: WORDPRESS_DB_HOST
+                    value: "mysql"
+                -   name: WORDPRESS_DB_PASSWORD
+                    value: "wordpress"
+
+        volumes:
+        - name: wordpress-uploads
+          persistentVolumeClaim:
+            claimName: wp-uploads-pv-claim
+
+
+        imagePullSecrets:
+        - name: secret-cloudconnect
+
+        initContainers:
+            -   name: init-wordpress
+                image: busybox:1.28
+                command: ['sh', '-c', 'until nslookup mysql; do echo waiting for es; sleep 2; done;']
+            -   name: init
+                image: busybox:latest
+                command: ['/bin/chmod', '777', '/var/www/html/wp-content/uploads']
+                volumeMounts:
+                - name: wordpress-uploads
+                  mountPath: /var/www/html/wp-content/uploads
+                
+
+  

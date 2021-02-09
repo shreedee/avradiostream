@@ -1,0 +1,17 @@
+Build the Production image
+
+CD to the folder with package.json
+
+DELETE the 
+
+docker build -t cloudconnect.scanrev.com:5000/av_radio_wp:1.1 .
+
+docker push cloudconnect.scanrev.com:5000/av_radio_wp:1.1
+
+
+//notes for jay
+deploy this in it's own namespace
+
+create ingress for this as well
+
+use dummy wp host name testradio.harmony.local

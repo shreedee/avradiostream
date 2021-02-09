@@ -1,2 +1,7 @@
 # avradiostream
-Auroville radio streaming server
+server 
+contains Auroville radio streaming server
+
+
+radiosite
+contains the radio Wordpress Theme
