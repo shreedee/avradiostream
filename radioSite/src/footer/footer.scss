@@ -1,0 +1,21 @@
+.footer {
+    margin-left: $width;
+    margin-top: $margin-top;
+    display: $display;
+    justify-content: space-between;
+
+    .footer-left {
+        border-left: 2px solid $hometextcolor;
+    }
+
+    p {
+        padding-left: $fontsize;
+        font-size: 20px;
+        line-height: $lineheight;
+    }
+}
+
+.footer-end {
+    margin-top: $margin;
+    width: 100%;
+}

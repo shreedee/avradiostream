@@ -24,15 +24,12 @@
         </div>
 
         <div class='search-header'></div>
-
-
         <div class='login-header'></div>
-
-
 
     </header>
 
-    <div class='container'>
+
+    <header class='content-header'>
 
         <div class='subcontent'>
             <img class='content-img1'
@@ -51,8 +48,9 @@
             </div>
 
         </div>
+    </header>
 
-
+    <div class='container'>
 
         <div class='subsection'>
             <p class='text'>
@@ -211,25 +209,25 @@
 
         <hr>
 
-        <div class='footer'>
-            <div class='footer-left'>
-                <p>INFO
-                <p>
-                <P>WHO WE ARE</P>
-                <P>OUR PARTNERS</P>
-            </div>
-            <div class='footer-right'>
-                <p>SOCIAL MEDIA</p>
-                <img src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/social-icons.png'
-                    alt='Media'></img>
-            </div>
-        </div>
+    </div>
 
-        <div>
-            <img class='footer-end' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/banner.png'
+    <div class='footer'>
+        <div class='footer-left'>
+            <p>INFO
+            <p>
+            <P>WHO WE ARE</P>
+            <P>OUR PARTNERS</P>
+        </div>
+        <div class='footer-right'>
+            <p>SOCIAL MEDIA</p>
+            <img src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/social-icons.png'
                 alt='Media'></img>
         </div>
+    </div>
 
+    <div>
+        <img class='footer-end' src='<?php echo get_bloginfo( 'template_directory' );?>/sampleImages/banner.png'
+            alt='Media'></img>
     </div>
 
 </div>

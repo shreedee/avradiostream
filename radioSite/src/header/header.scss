@@ -1,0 +1,81 @@
+.home-header {
+    background-color: $headerbg;
+    padding: 5px;
+    display: $display;
+
+    .logo-header {
+        .logoImg {
+            width: 140px;
+            height: 35px;
+            background-image: url("./assets/radio.png");
+            background-size: contain;
+            margin-right: 80px;
+        }
+    }
+
+    .nav-header {
+        padding-top: 10px;
+        a {
+            color: $hometextcolor;
+            padding: 10px 30px;
+            font-weight: 500;
+        }
+    }
+
+    .search-header {
+        width: 35px;
+        height: 35px;
+        background-image: url("./assets/search.jpg");
+        background-size: cover;
+    }
+
+    .login-header {
+        width: 60px;
+        height: 35px;
+        background-image: url("./assets/login.jpg");
+        background-size: contain;
+        margin-left: 100px;
+    }
+}
+
+.content-header {
+    .subcontent {
+        position: relative;
+
+        .content-img1 {
+            width: 1110px;
+            height: 400px;
+            filter: blur(8px);
+        }
+        .content-img2 {
+            width: 500px;
+            height: 400px;
+            position: absolute;
+            left: 60px;
+            opacity: 1;
+        }
+
+        .content-text-left {
+            position: absolute;
+            bottom: $fontsize;
+            left: 100px;
+            line-height: $lineheight;
+        }
+
+        .content-text-right {
+            position: absolute;
+            bottom: $fontsize;
+            right: $left;
+            line-height: $lineheight;
+            text-align: right;
+        }
+
+        .content-subtext1 {
+            font-size: 40px;
+        }
+        .content-subtext2 {
+            font-size: 25px;
+            font-weight: 700;
+        }
+    }
+}
