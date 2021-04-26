@@ -1,0 +1,29 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+
+<div>
+
+<h1>Aarohan-ep.19"Rituraaj Basant"
+
+<div>
+
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+
+<p>ep.10"Rituraaj Basant</p>
+<p>Spring Melodies</p>
+<p>Pt. Vijay</p>
+<p>Pt. Jitendra</p>
+<p>Pt. Bhimesh</p>
+
+</div>
+
+<div>
+
+LISTEN NOW
+
+</div>
+
+</div>
+
+{% endblock %}

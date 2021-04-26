@@ -20,8 +20,6 @@
 	
 	<link rel="stylesheet" href="<?php echo get_bloginfo( 'template_directory' );?>/dist/main.css" rel="stylesheet"/>
 
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
-	
 	<?php wp_head();?>
 </head>
 

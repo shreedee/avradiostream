@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: revsite
+    namespace: revsite
+spec:
+    ports:
+    -   port: 80
+    selector:
+        app: revsite
+
+---
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: revsite
+    namespace: revsite
+spec:
+
+  selector:
+    matchLabels:
+        app: revsite
+  replicas: 1
+  template:
+    metadata:
+        labels:
+            app: revsite
+    spec:
+        imagePullSecrets:
+        - name: secret-cloudconnect
+
+        containers:
+        -   name: revsite
+            image: cloudconnect.scanrev.com:5000/revsite:1.0.19
+            ports:
+            -   containerPort: 80
+

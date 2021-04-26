@@ -1,0 +1,57 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+
+<div>
+
+<h1>Aarohan</h1>
+
+<div>
+
+<h4>Filter by<i></i></h4>
+
+<div>
+
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+
+<h3>ep. 12- The Singing Sitar of Ustad Vilayat Khan</h3>
+
+<i></i>
+
+</div>
+
+</div>
+
+<div>
+
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+
+<p>Paragraph</p>
+
+</div>
+
+
+<h1>Most popular podcasts from Aarohan</h1>
+
+<div>
+
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+
+</div>
+
+<div>
+
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+
+<h3>ep. 12- The Singing Sitar of Ustad Vilayat Khan</h3>
+
+<i></i>
+
+</div>
+
+</div>
+
+
+{% endblock %}

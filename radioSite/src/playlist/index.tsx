@@ -1,3 +1,5 @@
+import 'playlistpage.scss';
+
 <div class='container'>
     <h1>Aarohan</h1>
     <div class='section'>

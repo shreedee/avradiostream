@@ -16,10 +16,10 @@
         </div>
 
         <div class='nav-header'>
-            <a href='#' class='active'> PROJECTS </a>
-            <a href='#'> PROGRAMS </a>
-            <a href='#'> PODCASTS </a>
-            <a href='#'> CATEGORIES </a>
+            <a href='<?php echo get_bloginfo( 'template_directory' );?>/playlistpage/index.tsx' class='active'> PROJECTS </a>
+            <a href='<?php echo get_bloginfo( 'template_directory' );?>/playlistpage/index.tsx'> PROGRAMS </a>
+            <a href='<?php echo get_bloginfo( 'template_directory' );?>/playlist/index.tsx'> PODCASTS </a>
+            <a href='<?php echo get_bloginfo( 'template_directory' );?>/playlistpage/index.tsx'> CATEGORIES </a>
             <a href='#'> | </a>
         </div>
 

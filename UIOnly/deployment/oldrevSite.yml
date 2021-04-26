@@ -1,0 +1,198 @@
+#this file deploys the rev FrontEnd to SFO cluster
+# create secrets Name : ` phv-secrets ` namespace revfrontend
+# add keys  ->  ` mysql_root_password `  &  ` mysql_password `   -> any random key
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: revfrontend-ingress
+  namespace: revfrontend
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+spec:
+  tls:
+    - hosts:
+      - scanrev.com
+      - www.scanrev.com
+      secretName: revfrontend-tls
+
+  rules:
+  - host: scanrev.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: wordpress 
+          servicePort: 80                    
+  - host: www.scanrev.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: wordpress 
+          servicePort: 80                    
+          
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  namespace: revfrontend
+  labels:
+    app: wordpress
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: wordpress
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  namespace: revfrontend
+  labels:
+    app: wordpress
+spec:
+  selector:
+    matchLabels:
+        app: wordpress
+ 
+  template:
+    metadata:
+        labels:
+            app: wordpress
+    spec:
+        containers:
+        -   image: labizbille/docker-wp:v1.0
+            name: wordpress
+            ports:
+            - containerPort: 80
+            env:
+                -   name: WORDPRESS_DB_HOST
+                    value: "mysql"
+                -   name: WORDPRESS_DB_PASSWORD
+                    valueFrom:
+                        secretKeyRef:
+                            name: phv-secrets
+                            key: mysql_root_password
+                -   name: ADDONS_plugins_1
+                    value: "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.1.3.2.zip"
+                -   name: ADDONS_themes_1
+                    value: "http://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/rev.zip"
+                -   name: ADDONS_plugins_2
+                    value: "http://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/appland-core.zip"
+                -   name: ADDONS_plugins_3
+                    value: "http://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/cs-framework.zip"
+                -   name: ADDONS_plugins_4
+                    value: "http://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/js_composer.zip"
+                -   name: ADDONS_plugins_5
+                    value: "https://downloads.wordpress.org/plugin/redux-framework.3.6.9.zip"
+                -   name: ADDONS_plugins_6
+                    value: "http://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/medium.zip"
+                -   name: ADDONS_plugins_7
+                    value: "https://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/auth0.zip"
+                -   name: ADDONS_plugins_8
+                    value: "https://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/wp-hide-dashboard.2.2.1.zip"
+                -   name: ADDONS_plugins_9
+                    value: "http://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/wp-google-search.1.0.7.zip"
+                -   name: GOOGLE_CSE_ID
+                    value: "002731039076853655427:7yalqceb5ve"
+                -   name: SUPPORT_TELNO
+                    value: "1-800-274-5568"
+                -   name: ADDONS_plugins_10
+                    value: "http://s3.amazonaws.com/downloads.labizbille.com/wordpressstuff/insert-headers-and-footers.1.4.3.zip"
+
+
+        initContainers:
+            -   name: init-wordpress
+                image: busybox:1.28
+                command: ['sh', '-c', 'until nslookup mysql; do echo waiting for es; sleep 2; done;']
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+    name: mysql
+    namespace: revfrontend
+    labels:
+        app: mysql
+
+spec:
+    clusterIP: None
+    ports:
+    -   port: 3306
+    selector:
+        app: mysql
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+  namespace: revfrontend
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+---      
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: mysql
+    namespace: revfrontend
+    labels:
+        app: mysql
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+        app: mysql
+  template:
+    metadata:
+        labels:
+            app: mysql
+    spec:
+        containers:
+        -   name: mysql
+            image: mysql:5.6
+            volumeMounts:
+            -   mountPath: "/var/lib/mysql"
+                name: mysql-data
+            ports:
+            -   containerPort: 3306
+            env:
+            -   name: MYSQL_DATABASE
+                value: "wordpress"
+            -   name: MYSQL_USER
+                value: "wordpress"
+            -   name: MYSQL_ROOT_PASSWORD
+                valueFrom:
+                    secretKeyRef:
+                        name: phv-secrets
+                        key: mysql_root_password
+            -   name: MYSQL_PASSWORD
+                valueFrom:
+                    secretKeyRef:
+                        name: phv-secrets
+                        key: mysql_password
+
+        volumes:
+        -   name: mysql-data
+            persistentVolumeClaim:
+                claimName: mysql-pv-claim
+
+        

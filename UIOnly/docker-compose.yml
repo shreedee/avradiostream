@@ -1,0 +1,11 @@
+version: '2.3'
+# this file is used for development 
+
+services:  
+  revsite:
+    image: nginx:1.19.9-alpine
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+      - ./build:/usr/share/nginx/html
+    ports:
+      - 8081:80

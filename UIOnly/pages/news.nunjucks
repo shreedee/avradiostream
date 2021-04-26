@@ -1,0 +1,30 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+
+<div>
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+</div>
+
+<div>
+<i></i>
+</div>
+
+<div>
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+</div>
+
+<div>
+<i></i>
+</div>
+
+<div>
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+<img src="../images/guitar.jpg" class="img-fluid" width="100%" alt="icon1">
+</div>
+
+{% endblock %}
