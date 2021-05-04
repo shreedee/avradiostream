@@ -2,171 +2,77 @@
 
 {% block content %}
 
-<div>
-
-    <h1>MOST RECENT PODCASTS TEST1: Stay up to date on the latest news, music, art and culture in Auroville.</h1>
-
     <div>
 
-        <img src="../images/notepad.jpg" alt="img1">
+        <h2>MOST RECENT PODCASTS TEST1: Stay up to date on the latest news, music, art and culture in Auroville.</h2>
 
-    <div>
+        <div class="sectiontop">
 
-        <img src="../images/aarohan.jpg" alt="img1">
-        <img src="../images/christmas.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
+            <img src="../images/notepad.jpg" alt="img1">
 
-    </div>
+            <div>
 
-    <i></i>
-
-    </div>
-
-
-    <div>
-
-    <h1>MOST FOLLOWED PROGRAMS: Top featured programs in various genres that are popular with our listeners</h1>
-
-    <div>
-
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-
-    </div>
-
-    <i></i>
-
-    </div>
-
-
-    <div>
-
-    <h1>MOST FOLLOWED PROGRAMS: Top featured programs in various genres that are popular with our listeners</h1>
-
-    <div>
-
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-
-    </div>
-
-    <i></i>
-
-    </div>
-
-
-    <div>
-
-    <h1>MOST FOLLOWED PROGRAMS: Top featured programs in various genres that are popular with our listeners</h1>
-
-    <div>
-
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-
-    </div>
-
-    <i></i>
-
-    </div>
-
-
-    <div>
-
-    <h1>MOST FOLLOWED PROGRAMS: Top featured programs in various genres that are popular with our listeners</h1>
-
-    <div>
-
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-
-    </div>
-
-    <i></i>
-
-    </div>
-
-
-    <div>
-
-        <h1>VIDEOS: Videos of news, events and interviews fresh out of Auroville!</h1>
-
-    <div>
-
-    <div>
-
-        <img src="../images/notepad.jpg" alt="img1">
-
-    </div>
-
-    <div>
-
-        <img src="../images/notepad.jpg" alt="img1">
-        <img src="../images/notepad.jpg" alt="img1">
-
-    </div>
-
-    </div>
-
-    <i></i>
-
-    </div>
-
-
-    <h1>DISCOVER: Discover podcasts and music according to genre</h1>
-
-    <div>
-
-        <Nature>
-        <Nature>
-        <Nature>
-        <Nature>
-        <Nature>
-        <Nature>
-
-    </div>
-
-</div>
-
-
-
-
-
-
-      
-    <div class="container">
-        <h1>TRUSTED BY:</h1>
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="../images/ace disposal.jpg"
-                    class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-lg-3">
-                <img src="../images/Compass CU.jpg"
-                    class="img-thumbnail" alt="...">
+                <img src="../images/aarohan.jpg" alt="img1">
+                <img src="../images/audible.jpg" alt="img1">
+                <img src="../images/notepad.jpg" alt="img1">
+                <img src="../images/notepad.jpg" alt="img1">
+                <img src="../images/notepad.jpg" alt="img1">
+                <img src="../images/notepad.jpg" alt="img1">
+                <img src="../images/notepad.jpg" alt="img1">
+                <img src="../images/notepad.jpg" alt="img1">
 
             </div>
-            <div class="col-lg-3">
-                <img src="../images/Arctic circle.jpg"
-                    class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-lg-3">
-                <img src="../images/Uintah School District.jpg"
-                    class="img-thumbnail" alt="...">
-            </div>
+
+            <i></i>
+
         </div>
 
+        <div class="sectionmid">
+
+            <h2>MOST FOLLOWED PROGRAMS: Top featured programs in various genres that are popular with our listeners</h2>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="img index-img1 img-thumbnail">
+                        <h3 class="index-subhead">Savitri</h3>
+                    </div>
+                    <div>
+                        <p>Loretta</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+
+                    <div class="img index-img2 img-thumbnail">
+                        <h3 class="index-subhead">Audible Weed</h3>
+                    </div>
+                    <div>
+                        <p>Nina</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+
+                    <div class="img index-img3 img-thumbnail">
+                        <h3 class="index-subhead">The Tamil Literary</h3>
+                    </div>
+                    <div>
+                        <p>Meenakshi</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+
+                    <div>
+                        <i></i>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+
+        </div>
     </div>
 
-
 {% endblock %}
-

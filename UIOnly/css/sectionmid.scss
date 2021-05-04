@@ -1,0 +1,23 @@
+.sectionmid {
+    .img {
+        background-size: cover;
+        height: 22rem;
+        display: flex;
+    }
+    .index-img1 {
+        background-image: url("../images/savitri.jpg");
+
+        .index-img2 {
+            background-image: url("../images/audible.jpg");
+        }
+        .index-img3 {
+            background-image: url("../images/tirumular.jpg");
+        }
+
+        .index-subhead {
+            color: $color2;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
