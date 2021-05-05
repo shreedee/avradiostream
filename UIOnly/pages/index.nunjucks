@@ -33,8 +33,9 @@
 
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="img index-img1 img-thumbnail">
+                    <div class="img index-img1">
                         <h3 class="index-subhead">Savitri</h3>
+                        <p>Loretta</p>
                     </div>
                     <div>
                         <p>Loretta</p>
@@ -43,8 +44,9 @@
 
                 <div class="col-lg-3">
 
-                    <div class="img index-img2 img-thumbnail">
+                    <div class="img index-img2">
                         <h3 class="index-subhead">Audible Weed</h3>
+                        <p>Nina</p>
                     </div>
                     <div>
                         <p>Nina</p>
@@ -53,8 +55,9 @@
 
                 <div class="col-lg-3">
 
-                    <div class="img index-img3 img-thumbnail">
+                    <div class="img index-img3">
                         <h3 class="index-subhead">The Tamil Literary</h3>
+                        <p>Meenakshi</p>
                     </div>
                     <div>
                         <p>Meenakshi</p>
